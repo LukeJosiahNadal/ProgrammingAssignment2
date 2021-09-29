@@ -1,11 +1,11 @@
 ## This is my submission on lexical scoping for week 3 of R Programming on Coursera
 makeCacheMatrix <- function(x = matrix()) {
-      inv <- NULL
+      inv <- NULL       ##This will initialize the inverse as NULL
       set <- function(y){
             x <<- y
             inv <<- NULL
       }
-      get <- function() {x}
+      get <- function() {x}         ##Then the function gets the matrix x
       setinverse <- function(inverse) {inv <<- inverse}
       getinverse <- function() {inv}
       list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
