@@ -1,4 +1,9 @@
 ## This is my submission on lexical scoping for week 3 of R Programming on Coursera
+
+## The fundamental function here is makeCacheMatrix
+
+## This function has set, get, setInv and getInv
+## All of these functions are made use of in the following code
 makeCacheMatrix <- function(x = matrix()) {
       inv <- NULL       ##This will initialize the inverse as NULL
       set <- function(y){
@@ -13,12 +18,12 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...){
       inv <- x$getinverse()
-      if(!is.null(inv)){
+      if(!is.null(inv)){ ##Checking if the inverse process would be NULL
             message("getting the cached data")
-            return(inv)
+            return(inv) ##Then returns if so
       }
       mat <- x$get()
       inv <- solve(mat, ...)
       x$setinverse(inv)
-      inv
+      inv ##Finally, a matrix returned by which x is of inverse
 }
